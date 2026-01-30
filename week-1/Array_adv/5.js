@@ -1,0 +1,28 @@
+const transactions = [
+  { id: 1, type: "credit", amount: 5000 },
+  { id: 2, type: "debit", amount: 2000 },
+  { id: 3, type: "credit", amount: 10000 },
+  { id: 4, type: "debit", amount: 3000 }
+];
+let result1 = transactions.filter(ele=>ele.type==="credit");
+console.log(result1);
+
+let result2 = transactions.map(ele=> ele.amount)
+console.log(result2)
+
+let result3 = Object.values(transactions).reduce((acc, ele)=>{
+    if(ele.type === "credit"){
+      acc -= ele.amount 
+    }
+    else{
+      acc += ele.amount
+    }
+    return acc;
+},0)
+console.log(result3);
+
+let result4 = transactions.find(ele=> ele.type ==="debit")
+console.log(result4)
+
+let result5 = transactions.findIndex(ele=>ele.amount===10000)
+console.log(result5)
