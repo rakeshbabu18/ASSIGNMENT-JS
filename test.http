@@ -1,0 +1,61 @@
+GET http://127.0.0.1:3000/user-api/users
+
+###
+POST http://127.0.0.1:3000/user-api/users
+Content-Type: application/json
+
+{
+    "id":200,
+    "name":"ravi",
+    "age":19
+}
+
+###
+PUT http://127.0.0.1:3000/user-api/users
+Content-Type: application/json
+
+{
+    "id":200,
+    "name":"ravi kumar",
+    "age":19
+}
+
+###
+DELETE http://127.0.0.1:3000/user-api/users/200
+ 
+###
+GET http://127.0.0.1:3000/user-api/users/200
+
+###
+GET http://localhost:3000/products-api/products
+
+###
+POST http://localhost:3000/products-api/products
+Content-Type: application/json
+
+{
+    "id":2,
+    "productName":"pad",
+    "price":1002,
+    "brand":"samsung"
+}
+
+###
+GET http://localhost:3000/products-api/products-id/1
+
+###
+GET http://localhost:3000/products-api/products-brand/Nokia
+
+###
+PUT http://localhost:3000/products-api/products/1
+Content-Type: application/json
+
+{
+    "id":1,
+    "productName":"mobile",
+    "price":1000,
+    "brand":"Nokia"
+}
+
+###
+DELETE http://localhost:3000/products-api/products/2
