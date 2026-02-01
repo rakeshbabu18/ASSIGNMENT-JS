@@ -1,0 +1,49 @@
+###
+GET http://localhost:4000/users-api/users
+
+###
+POST http://localhost:4000/users-api/users
+Content-Type: application/json
+
+{
+    "userName":"ravi11111",
+    "password":"12345678",
+    "age":20
+}
+
+###
+GET http://localhost:4000/users-api/users/697dc037861f5d6218a56163
+
+###
+PUT http://localhost:4000/users-api/users/697dc037861f5d6218a56163
+
+###
+DELETE http://localhost:4000/users-api/users/697dc037861f5d6218a56163
+
+
+###
+GET http://localhost:4000/products-api/products
+
+###
+POST http://localhost:4000/products-api/products
+Content-Type: application/json
+
+{
+    "productName":"mobile",
+    "productPrice":1000,
+    "brand":"Samsung"
+}
+
+
+###
+GET http://localhost:4000/products-api/products/697dd044cdbfdb7d12e0acfc
+
+###
+PUT http://localhost:4000/products-api/products/697dd044cdbfdb7d12e0acfc
+Content-Type: application/json
+
+{
+    "productName":"mobile",
+    "productPrice":2000,
+    "brand":"Samsung"
+}
