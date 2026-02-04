@@ -54,7 +54,7 @@ userApp.put('/users/:id', async(req, res) => {
        data:updatedUser
    })
 })
-
+//delete user by id
 userApp.delete('/users/:id',async(req,res)=>{
     let deleteId = req.params.id
     let deleteUser = await userModel.findByIdAndDelete(deleteId)

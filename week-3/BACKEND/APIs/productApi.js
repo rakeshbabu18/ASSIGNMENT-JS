@@ -37,8 +37,12 @@ productApp.put('/products/:id',async(req,res)=>{
 
     let modifiedProduct = req.body
 
-    let product = await productModel.updateOne({_id:objectId, },modifiedProduct)//updateOne() method updates the product
-
+    let product = await productModel.findByIdAndUpdate(objectId,
+        {$set:{...modifiedProduct}},
+        {new:true,runValidators:true}//runValidators will validate the values automatically
+    )
+     
+    //send res to client
     res.status(201).json({message:"product modified",payload:modifiedProduct})
 })
 

@@ -1,18 +1,25 @@
 import {Schema,model} from 'mongoose'
-//create users schema
-const userSchema = new Schema({
-    userName:{type:String,required:[true,"username is required"],
-    minlength:[3,"USer name must be greater than 6"],
-    maxlength:[20,"uswr nam eshould not be grater than 20"]
-    },
-    password:{type:String,required:[true,"password is required"],
-    minlength:[7,"password must be greater than 6"],
-    maxlength:[20,"password eshould not be grater than 20"]
-    },
-    age:{type:Number, 
-    min:[10,"Age must be greater than 10"],
-    max:[60,"uswr nam eshould not be grater than 60"]
-    }
+//create user schema (username password, age)
+const userSchema =new Schema({
+   userName:{
+    type:String,
+    required:[true,"Username is required"],
+    minlength:[6,"Username must be at least 6 characters long"],
+    maxlength:[20,"Username must be at most 20 characters long"]
+},
+   password:{type:String,
+    required:[true,"Password is required"],
+    minlength:[6,"Password must be at least 6 characters long"],
+    maxlength:[20,"Password must be at most 20 characters long"]},
+   age:{
+    type:Number,
+    required:[true,"Age is required"],
+    min:[18,"Age must be at least 18"],
+    max:[25,"Age must be at most 25"]
+}
+},{
+    strict:'throw',//it will throw an error if any extra field is added
+    timestamps:true//it will add createdAt and updatedAt fields automatically
 })
 
  

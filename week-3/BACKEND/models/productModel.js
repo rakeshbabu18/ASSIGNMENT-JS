@@ -5,6 +5,6 @@ const productSchema = new Schema({
     productPrice:{type:Number,required:[true,"Invalid product"]},
     brand:{type:String}
 
-})
+},{ strict:'throw',timestamps:true})
 
 export const productModel = model("products",productSchema)
